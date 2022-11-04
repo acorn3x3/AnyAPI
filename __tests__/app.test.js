@@ -16,4 +16,18 @@ describe('champions routes', () => {
     });
     expect(res.body).toEqual(expected);
   });
+
+  it('/champions/:id should return champion detail', async () => {
+    const res = await request(app).get('/champions/1');
+    const akshan = {
+      id: '1',
+      name: 'Akshan',
+      title: 'The Rogue Sentinel',
+      quote: 'Fixing the world, one scoundrel at a time',
+    };
+    expect(res.body).toEqual(akshan);
+  });
+  afterAll(() => {
+    pool.end();
+  });
 });

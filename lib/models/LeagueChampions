@@ -10,4 +10,10 @@ module.exports = class LeagueChampions {
     const { rows } = await pool.query('SELECT * from champions');
     return rows.map((championRow) => new LeagueChampions(championRow));
   }
+  static async getById(id) {
+    const { rows } = await pool.query('SELECT * from champions WHERE id = $1', [
+      id,
+    ]);
+    return new LeagueChampions(rows[0]);
+  }
 };
