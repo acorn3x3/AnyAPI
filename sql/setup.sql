@@ -25,3 +25,24 @@ VALUES
 ( 'Viego','King of Camavor','Where is she?!');
 
 
+
+DROP TABLE IF EXISTS locations;
+
+CREATE TABLE locations (
+    id BIGINT GENERATED ALWAYS AS IDENTITY, 
+    name VARCHAR NOT NULL,
+    monster VARCHAR NOT NULL,
+    biome VARCHAR NOT NULL
+);
+
+INSERT INTO locations (name, monster, biome)
+VALUES
+('Demacia','Silverwing', 'Plains'),
+('Ionia','Azakana', 'Forests'),
+('Shurima','Baccai', 'Deserts'),
+('Noxus','Snapper', 'Badlands'),
+('Targon','Celestial', 'Mountains'),
+('Freljord','Yeti', 'Mountains'),
+('Bilgewater','Jaull', 'Islands');
+
+

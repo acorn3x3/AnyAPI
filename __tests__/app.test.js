@@ -27,6 +27,7 @@ describe('champions routes', () => {
     };
     expect(res.body).toEqual(akshan);
   });
+
   afterAll(() => {
     pool.end();
   });
