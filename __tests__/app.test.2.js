@@ -18,6 +18,16 @@ describe('location routes', () => {
     expect(res.body).toEqual(expected);
   });
 });
+it('/locations/:id should return champion detail', async () => {
+  const res = await request(app).get('/locations/1');
+  const demacia = {
+    id: '1',
+    name: 'Demacia',
+    monster: 'Silverwing',
+    biome: 'Plains',
+  };
+  expect(res.body).toEqual(demacia);
+});
 afterAll(() => {
   pool.end();
 });
